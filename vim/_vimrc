@@ -1,0 +1,108 @@
+filetype off
+filetype plugin indent off
+
+" カラースキームを指定
+colorscheme torte
+"colorscheme koehler
+
+" フォントサイズをデフォルトより小さいサイズに変更
+"set guifont=MS_Gothic:h9:cSHIFTJIS
+" 改行コードの自動判別
+set fileformats=unix,dos,mac
+
+" 文字エンコーディングの指定
+" msysGit用にutf-8をfencのデフォルトにしておくか？
+"set encoding=utf-8
+"set fileencoding=utf-8
+"set fileencodings=ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932,utf-8
+
+" バックスペースで「行頭の空白」、「改行」、
+" 「挿入モード開始位置より手前」を削除できるように
+set backspace=indent,eol,start
+
+" 保存していない編集をバックアップ
+set writebackup
+" バックアップの保存先を指定
+set backupdir=$HOME/.vim/backup
+" swpファイルの保存先を指定
+set directory=$HOME/.vim/swpfile
+
+" 検索時に大文字が含まれている場合は区別する
+set smartcase
+" 最後まで検索したら先頭に戻さない
+set nowrapscan
+" 必ずvimgrepを使用する
+set grepprg=internal
+
+" 行番号を表示
+set number
+" Ctrl-Iでタブ文字表示を行わない
+"set list
+" 対応する括弧を表示
+set showmatch
+" テキストの最大幅の制約を無効化する
+set textwidth=0
+" テキストの折り返しを行わない
+set nowrap
+
+" オートインデントを有効にする
+set autoindent
+" スマートインデントも有効にする(EMACSライクのオートインデントは使用しない)
+set smartindent
+set nocindent
+
+" タブの文字数を指定
+set tabstop=4
+" タブ、バックスペース使用時の編集操作を行うときのタブの幅
+set softtabstop=4
+" オートインデント時のタブの幅
+set shiftwidth=4
+" タブを挿入するときに空白に置きかえる
+"set expandtab
+
+source $VIMRUNTIME/macros/matchit.vim
+
+" インデント操作を連続して行えるようにする
+vnoremap < <gv
+vnoremap > >gv
+
+" クリップボードにヤンクした内容を共有する
+set clipboard=unnamed
+
+" 端末上でマウスを使えるようにする
+set mouse=a
+set ttymouse=xterm2
+
+" 指定のコマンド実行時に必ずQuickfixを開く
+"autocmd QuickfixCmdPost vimgrep if len(getqflist())!=0 | copen | endif
+autocmd QuickfixCmdPost vimgrep cw
+autocmd QuickfixCmdPost lvimgrep lw
+
+" 以下、Vundle設定
+set nocompatible
+set rtp+=~/.vim/vundle.git/
+call vundle#rc()
+
+Bundle 'basyura/jslint.vim'
+Bundle 'kchmck/vim-coffee-script'
+
+filetype plugin indent on
+
+"-----------------
+" jslint.vim
+"-----------------
+function! s:javascript_filetype_settings()
+  autocmd BufLeave     <buffer> call jslint#clear()
+  autocmd BufWritePost <buffer> call jslint#check()
+  autocmd CursorMoved  <buffer> call jslint#message()
+endfunction
+autocmd FileType javascript call s:javascript_filetype_settings()
+
+"-----------------
+" vim-coffee-script.vim
+"-----------------
+" vimにcoffeeファイルタイプを認識させる
+au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
+" インデントを設定
+autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
+

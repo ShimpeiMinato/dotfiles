@@ -1,0 +1,13 @@
+" カラースキームを指定
+colorscheme torte
+"colorscheme koehler
+
+" フォントサイズをデフォルトより小さいサイズに変更
+"set guifont=MS_Gothic:h9:cSHIFTJIS
+
+" タイトルをウィンドウに表示
+set title
+" 起動時のウィンドウサイズを設定(デフォルトは24,80)
+set lines=48
+set columns=120
+
