@@ -6,11 +6,11 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # Source Git extension
-if [ -f ~/.git-completion.sh ]; then
-  source ~/.git-completion.sh
+if [ -f ~/Repository/git/dotfiles/bash/.git-completion.sh ]; then
+  source ~/Repository/git/dotfiles/bash/.git-completion.sh
 fi
-if [ -f ~/.git-prompt.sh ]; then
-  source ~/.git-prompt.sh
+if [ -f ~/Repository/git/dotfiles/bash/.git-prompt.sh ]; then
+  source ~/Repository/git/dotfiles/bash/.git-prompt.sh
 fi
 
 #export PS1="[\t \u:\w]\n\$ "

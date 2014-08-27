@@ -79,30 +79,30 @@ autocmd QuickfixCmdPost vimgrep cw
 autocmd QuickfixCmdPost lvimgrep lw
 
 " 以下、Vundle設定
-set nocompatible
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
+"set nocompatible
+"set rtp+=~/.vim/vundle.git/
+"call vundle#rc()
+"
+"Bundle 'basyura/jslint.vim'
+"Bundle 'kchmck/vim-coffee-script'
 
-Bundle 'basyura/jslint.vim'
-Bundle 'kchmck/vim-coffee-script'
-
-filetype plugin indent on
+"filetype plugin indent on
 
 "-----------------
 " jslint.vim
 "-----------------
-function! s:javascript_filetype_settings()
-  autocmd BufLeave     <buffer> call jslint#clear()
-  autocmd BufWritePost <buffer> call jslint#check()
-  autocmd CursorMoved  <buffer> call jslint#message()
-endfunction
-autocmd FileType javascript call s:javascript_filetype_settings()
+"function! s:javascript_filetype_settings()
+"  autocmd BufLeave     <buffer> call jslint#clear()
+"  autocmd BufWritePost <buffer> call jslint#check()
+"  autocmd CursorMoved  <buffer> call jslint#message()
+"endfunction
+"autocmd FileType javascript call s:javascript_filetype_settings()
 
 "-----------------
 " vim-coffee-script.vim
 "-----------------
 " vimにcoffeeファイルタイプを認識させる
-au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
+"au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
 " インデントを設定
-autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
+"autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
 
