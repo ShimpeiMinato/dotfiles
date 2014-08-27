@@ -31,8 +31,9 @@ PATH=/usr/local/bin:/usr/local/sbin:$PATH
 PATH=~/bin:$PATH
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/usr/local/mysql/bin
-PATH=$PATH:~/dev_tools/adt-bundle-mac-x86_64-20140321/sdk/tools
-PATH=$PATH:~/dev_tools/adt-bundle-mac-x86_64-20140321/sdk/platform-tools
+PATH=$PATH:/usr/local/mysql/support-files
+PATH=$PATH:~/devtools/adt-bundle-mac-x86_64/sdk/tools
+PATH=$PATH:~/devtools/adt-bundle-mac-x86_64/sdk/platform-tools
 export PATH
 
 # User specific aliases and functions

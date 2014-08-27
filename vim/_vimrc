@@ -26,6 +26,8 @@ set writebackup
 set backupdir=$HOME/.vim/backup
 " swpファイルの保存先を指定
 set directory=$HOME/.vim/swpfile
+" undoファイルの保存先を指定
+set undodir=$HOME/.vim/undo
 
 " 検索時に大文字が含まれている場合は区別する
 set smartcase
