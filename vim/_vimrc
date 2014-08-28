@@ -80,6 +80,8 @@ set ttymouse=xterm2
 autocmd QuickfixCmdPost vimgrep cw
 autocmd QuickfixCmdPost lvimgrep lw
 
+filetype plugin indent on
+
 " à»â∫ÅAVundleê›íË
 "set nocompatible
 "set rtp+=~/.vim/vundle.git/
@@ -87,8 +89,6 @@ autocmd QuickfixCmdPost lvimgrep lw
 "
 "Bundle 'basyura/jslint.vim'
 "Bundle 'kchmck/vim-coffee-script'
-
-"filetype plugin indent on
 
 "-----------------
 " jslint.vim
