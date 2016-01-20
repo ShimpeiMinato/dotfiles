@@ -10,4 +10,5 @@ tags
 vim/_vim/backup/*
 vim/_vim/swpfile/*
 vim/_vim/undo/*
+vim/_vim/.netrwhist
 
