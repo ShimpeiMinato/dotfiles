@@ -24,8 +24,8 @@ PATH=~/bin:$PATH
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/usr/local/mysql/support-files
-PATH=$PATH:~/devtools/adt-bundle-mac-x86_64/sdk/tools
-PATH=$PATH:~/devtools/adt-bundle-mac-x86_64/sdk/platform-tools
+PATH=$PATH:~/devtools/android-sdk-macosx/tools
+PATH=$PATH:~/devtools/android-sdk-macosx/platform-tools
 export PATH
 
 # User specific aliases and functions
@@ -39,23 +39,6 @@ alias grep='grep -E --color=auto'
 alias svn='colorsvn'
 alias be='bundle exec'
 
-# Attache tmux
-#if ( ! test $TMUX ) && ( ! expr $TERM : "^screen" > /dev/null ) && which tmux > /dev/null; then
-#  if ( tmux has-session 2>/dev/null ); then
-#    session=`tmux list-sessions | grep -e '^[0-9].*]$' | head -n 1 | sed -e 's/^\([0-9]*\).*$/\1/'`
-#    if [ -n "$session" ]; then
-#      echo "Attache tmux session $session."
-#      tmux attach-session -t $session
-#    else
-#      echo "Session has been already attached."
-#      tmux list-sessions
-#    fi
-#  else
-#    echo "Create new tmux session."
-#    tmux
-#  fi
-#fi
-
 # npm settings.
 export NODE_PATH='/usr/local/lib/node_modules'
 
@@ -67,8 +50,10 @@ if [ -f ~/Repository/git/dotfiles/bash/.git-prompt.sh ]; then
   source ~/Repository/git/dotfiles/bash/.git-prompt.sh
 fi
 
-# Install local::lib for Spreadsheet::XLSX
-if which cpanm > /dev/null 2>&1 && which perl > /dev/null 2>&1; then
-  cpanm --local-lib=~/perl5 local::lib > /dev/null && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
-fi
+# Golang
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/.go
+
+# Homebrew-cask
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
