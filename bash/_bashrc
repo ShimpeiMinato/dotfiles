@@ -6,7 +6,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # less colors setting.
-export LESS='-R'
+export LESS='-i -R'
 
 # Path settings
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
@@ -66,5 +66,12 @@ if [ "`uname -s`" == "Darwin" ]; then
 
   # Homebrew-cask
   export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+  #eiffel
+  export ISE_EIFFEL=/usr/local/Cellar/eiffelstudio/17.01.9.9700
+  export ISE_PLATFORM=macosx-x86-64
+  export ISE_PROJECTS=~/my_working/_study/eiffel
+  export ES_PATH=$ISE_EIFFEL/studio/spec/$ISE_PLATFORM/bin
+  export PATH=$ES_PATH:$PATH
 fi
 
