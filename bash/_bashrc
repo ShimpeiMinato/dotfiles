@@ -7,6 +7,17 @@ elif [ -f /etc/gentoo-release ]; then
   source /etc/bash/bashrc
 fi
 
+export VCS_REPOSITORIES="$HOME/repository"
+export VCS_GIT="$VCS_REPOSITORIES/git"
+
+# Source Git extension
+if [ -f "$VCS_GIT/dotfiles/bash/.git-completion.sh" ]; then
+  source "$VCS_GIT/dotfiles/bash/.git-completion.sh"
+fi
+if [ -f "$VCS_GIT/dotfiles/bash/.git-prompt.sh" ]; then
+  source "$VCS_GIT/dotfiles/bash/.git-prompt.sh"
+fi
+
 export PS1="\[\033]0;\u@\h:\w\007\]\[\033[01;32m\]\u@\h\[\033[01;34m\] \W\$(__git_ps1 \"[%s]\") \$\[\033[00m\] "
 
 # less colors setting.
@@ -14,9 +25,6 @@ export LESS='-i -R'
 
 # grep colors setting.
 #export GREP_COLOR='1;37;41'
-
-export VCS_REPOSITORIES="~/repository"
-export VCS_GIT="$VCS_REPOSITORIES/git"
 
 # Path settings
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
@@ -30,12 +38,4 @@ alias mv='mv -i'
 alias ls='ls -F --color=auto --show-control-chars'
 #alias grep='grep -E --color=auto'
 #alias eng='LANG=C LANGUAGE=C LC_CTYPE=C'
-
-# Source Git extension
-if [ -f "$VCS_GIT/dotfiles/bash/.git-completion.sh" ]; then
-  source "$VCS_GIT/dotfiles/bash/.git-completion.sh"
-fi
-if [ -f "$VCS_GIT/dotfiles/bash/.git-prompt.sh" ]; then
-  source "$VCS_GIT/dotfiles/bash/.git-prompt.sh"
-fi
 
