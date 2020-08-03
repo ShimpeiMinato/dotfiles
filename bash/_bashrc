@@ -3,10 +3,20 @@
 # Source global definitions
 if [ -f /etc/bashrc ]; then
   source /etc/bashrc
+elif [ -f /etc/gentoo-release ]; then
+  source /etc/bash/bashrc
 fi
+
+export PS1="\[\033]0;\u@\h:\w\007\]\[\033[01;32m\]\u@\h\[\033[01;34m\] \W\$(__git_ps1 \"[%s]\") \$\[\033[00m\] "
 
 # less colors setting.
 export LESS='-i -R'
+
+# grep colors setting.
+#export GREP_COLOR='1;37;41'
+
+export VCS_REPOSITORIES="~/repository"
+export VCS_GIT="$VCS_REPOSITORIES/git"
 
 # Path settings
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
@@ -17,62 +27,15 @@ export PATH
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias ls='ls -F --color=auto --show-control-chars'
+#alias grep='grep -E --color=auto'
+#alias eng='LANG=C LANGUAGE=C LC_CTYPE=C'
 
 # Source Git extension
-if [ -f ~/Repository/git/dotfiles/bash/.git-completion.sh ]; then
-  source ~/Repository/git/dotfiles/bash/.git-completion.sh
+if [ -f "$VCS_GIT/dotfiles/bash/.git-completion.sh" ]; then
+  source "$VCS_GIT/dotfiles/bash/.git-completion.sh"
 fi
-if [ -f ~/Repository/git/dotfiles/bash/.git-prompt.sh ]; then
-  source ~/Repository/git/dotfiles/bash/.git-prompt.sh
-fi
-
-# for platform
-if [ "`uname -s`" == "Darwin" ]; then
-  #export PS1="[\t \u:\w]\n\$ "
-  export PS1="\[\033[037;044m\]\W\$(__git_ps1 \"[%s]\")$\[\033[037;000m\] "
-
-  # ls colors setting.
-  # change directory and symbolic link color.
-  export LS_COLORS="no=00:fi=00:di=01;36:ln=00;36:*.lnk=00;36"
-
-  # grep colors setting.
-  export GREP_COLOR='1;37;41'
-
-  # less colors setting.
-  export LESSOPEN='| /usr/local/Cellar/source-highlight/3.1.7/bin/src-hilite-lesspipe.sh %s'
-
-  # Path settings
-  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-  PATH=$PATH:/usr/local/mysql/bin
-  PATH=$PATH:/usr/local/mysql/support-files
-  PATH=$PATH:~/devtools/android-sdk-macosx/tools
-  PATH=$PATH:~/devtools/android-sdk-macosx/platform-tools
-  PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
-  export PATH
-
-  # User specific aliases and functions
-  alias ls='ls -F -G'
-  #alias ls='ls -F --color=auto --show-control-chars'
-  #alias eng='LANG=C LANGUAGE=C LC_CTYPE=C'
-  alias grep='grep -E --color=auto'
-  alias svn='colorsvn'
-  alias be='bundle exec'
-
-  # npm settings.
-  export NODE_PATH='/usr/local/lib/node_modules'
-
-  # Golang
-  export GOROOT=/usr/local/opt/go/libexec
-  export GOPATH=$HOME/.go
-
-  # Homebrew-cask
-  export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-  #eiffel
-  export ISE_EIFFEL=/usr/local/Cellar/eiffelstudio/17.01.9.9700
-  export ISE_PLATFORM=macosx-x86-64
-  export ISE_PROJECTS=~/my_working/_study/eiffel
-  export ES_PATH=$ISE_EIFFEL/studio/spec/$ISE_PLATFORM/bin
-  export PATH=$ES_PATH:$PATH
+if [ -f "$VCS_GIT/dotfiles/bash/.git-prompt.sh" ]; then
+  source "$VCS_GIT/dotfiles/bash/.git-prompt.sh"
 fi
 
