@@ -1,110 +1,92 @@
 filetype off
 filetype plugin indent off
 
-" ƒJƒ‰[ƒXƒL[ƒ€‚ğw’è
+" ã‚«ãƒ©ãƒ¼ã‚¹ã‚­ãƒ¼ãƒ ã‚’æŒ‡å®š
 colorscheme torte
 "colorscheme koehler
 
-" ƒtƒHƒ“ƒgƒTƒCƒY‚ğƒfƒtƒHƒ‹ƒg‚æ‚è¬‚³‚¢ƒTƒCƒY‚É•ÏX
+" ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã‚’ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚ˆã‚Šå°ã•ã„ã‚µã‚¤ã‚ºã«å¤‰æ›´
 "set guifont=MS_Gothic:h9:cSHIFTJIS
-" ‰üsƒR[ƒh‚Ì©“®”»•Ê
+" æ”¹è¡Œã‚³ãƒ¼ãƒ‰ã®è‡ªå‹•åˆ¤åˆ¥
 set fileformats=unix,dos,mac
 
-" •¶šƒGƒ“ƒR[ƒfƒBƒ“ƒO‚Ìw’è
-" msysGit—p‚Éutf-8‚ğfenc‚ÌƒfƒtƒHƒ‹ƒg‚É‚µ‚Ä‚¨‚­‚©H
-"set encoding=utf-8
-"set fileencoding=utf-8
-"set fileencodings=ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932,utf-8
+" æ–‡å­—ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°ã®æŒ‡å®š
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932,utf-8
 
-" ƒoƒbƒNƒXƒy[ƒX‚Åus“ª‚Ì‹ó”’vAu‰üsvA
-" u‘}“üƒ‚[ƒhŠJnˆÊ’u‚æ‚èè‘Ov‚ğíœ‚Å‚«‚é‚æ‚¤‚É
+" ãƒãƒƒã‚¯ã‚¹ãƒšãƒ¼ã‚¹ã§ã€Œè¡Œé ­ã®ç©ºç™½ã€ã€ã€Œæ”¹è¡Œã€ã€
+" ã€ŒæŒ¿å…¥ãƒ¢ãƒ¼ãƒ‰é–‹å§‹ä½ç½®ã‚ˆã‚Šæ‰‹å‰ã€ã‚’å‰Šé™¤ã§ãã‚‹ã‚ˆã†ã«
 set backspace=indent,eol,start
 
-" •Û‘¶‚µ‚Ä‚¢‚È‚¢•ÒW‚ğƒoƒbƒNƒAƒbƒv
+" ä¿å­˜ã—ã¦ã„ãªã„ç·¨é›†ã‚’ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—
 set writebackup
-" ƒoƒbƒNƒAƒbƒv‚Ì•Û‘¶æ‚ğw’è
+" ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã®ä¿å­˜å…ˆã‚’æŒ‡å®š
 set backupdir=$HOME/.vim/backup
-" swpƒtƒ@ƒCƒ‹‚Ì•Û‘¶æ‚ğw’è
+" swpãƒ•ã‚¡ã‚¤ãƒ«ã®ä¿å­˜å…ˆã‚’æŒ‡å®š
 set directory=$HOME/.vim/swpfile
-" undoƒtƒ@ƒCƒ‹‚Ì•Û‘¶æ‚ğw’è
+" undoãƒ•ã‚¡ã‚¤ãƒ«ã®ä¿å­˜å…ˆã‚’æŒ‡å®š
 set undodir=$HOME/.vim/undo
 
-" ŒŸõ‚É‘å•¶š‚ªŠÜ‚Ü‚ê‚Ä‚¢‚éê‡‚Í‹æ•Ê‚·‚é
+" æ¤œç´¢æ™‚ã«å¤§æ–‡å­—ãŒå«ã¾ã‚Œã¦ã„ã‚‹å ´åˆã¯åŒºåˆ¥ã™ã‚‹
 set smartcase
-" ÅŒã‚Ü‚ÅŒŸõ‚µ‚½‚çæ“ª‚É–ß‚³‚È‚¢
+" æœ€å¾Œã¾ã§æ¤œç´¢ã—ãŸã‚‰å…ˆé ­ã«æˆ»ã•ãªã„
 set nowrapscan
-" •K‚¸vimgrep‚ğg—p‚·‚é
-set grepprg=internal
+" å¿…ãšvimgrepã‚’ä½¿ç”¨ã™ã‚‹
+"set grepprg=internal
 
-" s”Ô†‚ğ•\¦
+" è¡Œç•ªå·ã‚’è¡¨ç¤º
 set number
-" Ctrl-I‚Åƒ^ƒu•¶š•\¦‚ğs‚í‚È‚¢
+" Ctrl-Iã§ã‚¿ãƒ–æ–‡å­—è¡¨ç¤ºã‚’è¡Œã‚ãªã„
 "set list
-" ‘Î‰‚·‚éŠ‡ŒÊ‚ğ•\¦
+" å¯¾å¿œã™ã‚‹æ‹¬å¼§ã‚’è¡¨ç¤º
 set showmatch
-" ƒeƒLƒXƒg‚ÌÅ‘å•‚Ì§–ñ‚ğ–³Œø‰»‚·‚é
+" ãƒ†ã‚­ã‚¹ãƒˆã®æœ€å¤§å¹…ã®åˆ¶ç´„ã‚’ç„¡åŠ¹åŒ–ã™ã‚‹
 set textwidth=0
-" ƒeƒLƒXƒg‚ÌÜ‚è•Ô‚µ‚ğs‚í‚È‚¢
+" ãƒ†ã‚­ã‚¹ãƒˆã®æŠ˜ã‚Šè¿”ã—ã‚’è¡Œã‚ãªã„
 set nowrap
 
-" ƒI[ƒgƒCƒ“ƒfƒ“ƒg‚ğ—LŒø‚É‚·‚é
+" ã‚ªãƒ¼ãƒˆã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã‚’æœ‰åŠ¹ã«ã™ã‚‹
 set autoindent
-" ƒXƒ}[ƒgƒCƒ“ƒfƒ“ƒg‚à—LŒø‚É‚·‚é(EMACSƒ‰ƒCƒN‚ÌƒI[ƒgƒCƒ“ƒfƒ“ƒg‚Íg—p‚µ‚È‚¢)
+" ã‚¹ãƒãƒ¼ãƒˆã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã‚‚æœ‰åŠ¹ã«ã™ã‚‹(EMACSãƒ©ã‚¤ã‚¯ã®ã‚ªãƒ¼ãƒˆã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã¯ä½¿ç”¨ã—ãªã„)
 set smartindent
 set nocindent
 
-" ƒ^ƒu‚Ì•¶š”‚ğw’è
+" ã‚¿ãƒ–ã®æ–‡å­—æ•°ã‚’æŒ‡å®š
 set tabstop=4
-" ƒ^ƒuAƒoƒbƒNƒXƒy[ƒXg—p‚Ì•ÒW‘€ì‚ğs‚¤‚Æ‚«‚Ìƒ^ƒu‚Ì•
-set softtabstop=4
-" ƒI[ƒgƒCƒ“ƒfƒ“ƒg‚Ìƒ^ƒu‚Ì•
-set shiftwidth=4
-" ƒ^ƒu‚ğ‘}“ü‚·‚é‚Æ‚«‚É‹ó”’‚É’u‚«‚©‚¦‚é
-"set expandtab
+" ã‚¿ãƒ–ã€ãƒãƒƒã‚¯ã‚¹ãƒšãƒ¼ã‚¹ä½¿ç”¨æ™‚ã®ç·¨é›†æ“ä½œã‚’è¡Œã†ã¨ãã®ã‚¿ãƒ–ã®å¹…
+set softtabstop=2
+" ã‚ªãƒ¼ãƒˆã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆæ™‚ã®ã‚¿ãƒ–ã®å¹…
+set shiftwidth=2
+" ã‚¿ãƒ–ã‚’æŒ¿å…¥ã™ã‚‹ã¨ãã«ç©ºç™½ã«ç½®ãã‹ãˆã‚‹
+set expandtab
+
+" ãƒ•ã‚¡ã‚¤ãƒ«ã‚¿ã‚¤ãƒ—ã‚’è¡¨ç¤º
+set laststatus=2
+set statusline=%y
 
 source $VIMRUNTIME/macros/matchit.vim
 
-" ƒCƒ“ƒfƒ“ƒg‘€ì‚ğ˜A‘±‚µ‚Äs‚¦‚é‚æ‚¤‚É‚·‚é
+" ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆæ“ä½œã‚’é€£ç¶šã—ã¦è¡Œãˆã‚‹ã‚ˆã†ã«ã™ã‚‹
 vnoremap < <gv
 vnoremap > >gv
 
-" ƒNƒŠƒbƒvƒ{[ƒh‚Éƒ„ƒ“ƒN‚µ‚½“à—e‚ğ‹¤—L‚·‚é
+" ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«ãƒ¤ãƒ³ã‚¯ã—ãŸå†…å®¹ã‚’å…±æœ‰ã™ã‚‹
 set clipboard=unnamed
 
-" ’[––ã‚Åƒ}ƒEƒX‚ğg‚¦‚é‚æ‚¤‚É‚·‚é
+" ç«¯æœ«ä¸Šã§ãƒã‚¦ã‚¹ã‚’ä½¿ãˆã‚‹ã‚ˆã†ã«ã™ã‚‹
 set mouse=a
 set ttymouse=xterm2
 
-" w’è‚ÌƒRƒ}ƒ“ƒhÀs‚É•K‚¸Quickfix‚ğŠJ‚­
+" ç«¯æœ«ä¸Šã§ã‚­ãƒ£ãƒ¬ãƒƒãƒˆã‚’ãƒ¢ãƒ¼ãƒ‰ã«åˆã‚ã›ã¦å¤‰åŒ–ã•ã›ã‚‹(è¨˜æ³•ã¯DECSCUSRã‚’å‚ç…§)
+let &t_SI .= "\e[5 q"
+let &t_SR .= "\e[3 q"
+let &t_EI .= "\e[1 q"
+
+" æŒ‡å®šã®ã‚³ãƒãƒ³ãƒ‰å®Ÿè¡Œæ™‚ã«å¿…ãšQuickfixã‚’é–‹ã
 "autocmd QuickfixCmdPost vimgrep if len(getqflist())!=0 | copen | endif
 autocmd QuickfixCmdPost vimgrep cw
 autocmd QuickfixCmdPost lvimgrep lw
 
 filetype plugin indent on
-
-" ˆÈ‰ºAVundleİ’è
-"set nocompatible
-"set rtp+=~/.vim/vundle.git/
-"call vundle#rc()
-"
-"Bundle 'basyura/jslint.vim'
-"Bundle 'kchmck/vim-coffee-script'
-
-"-----------------
-" jslint.vim
-"-----------------
-"function! s:javascript_filetype_settings()
-"  autocmd BufLeave     <buffer> call jslint#clear()
-"  autocmd BufWritePost <buffer> call jslint#check()
-"  autocmd CursorMoved  <buffer> call jslint#message()
-"endfunction
-"autocmd FileType javascript call s:javascript_filetype_settings()
-
-"-----------------
-" vim-coffee-script.vim
-"-----------------
-" vim‚Écoffeeƒtƒ@ƒCƒ‹ƒ^ƒCƒv‚ğ”F¯‚³‚¹‚é
-"au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
-" ƒCƒ“ƒfƒ“ƒg‚ğİ’è
-"autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
 

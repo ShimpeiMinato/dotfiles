@@ -1,13 +1,13 @@
-" ƒJƒ‰[ƒXƒL[ƒ€‚ðŽw’è
+" ã‚«ãƒ©ãƒ¼ã‚¹ã‚­ãƒ¼ãƒ ã‚’æŒ‡å®š
 colorscheme torte
 "colorscheme koehler
 
-" ƒtƒHƒ“ƒgƒTƒCƒY‚ðƒfƒtƒHƒ‹ƒg‚æ‚è¬‚³‚¢ƒTƒCƒY‚É•ÏX
+" ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã‚’ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚ˆã‚Šå°ã•ã„ã‚µã‚¤ã‚ºã«å¤‰æ›´
 "set guifont=MS_Gothic:h9:cSHIFTJIS
 
-" ƒ^ƒCƒgƒ‹‚ðƒEƒBƒ“ƒhƒE‚É•\Ž¦
+" ã‚¿ã‚¤ãƒˆãƒ«ã‚’ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã«è¡¨ç¤º
 set title
-" ‹N“®Žž‚ÌƒEƒBƒ“ƒhƒEƒTƒCƒY‚ðÝ’è(ƒfƒtƒHƒ‹ƒg‚Í24,80)
+" èµ·å‹•æ™‚ã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚ºã‚’è¨­å®š(ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯24,80)
 set lines=48
 set columns=120
 
