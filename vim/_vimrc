@@ -29,9 +29,13 @@ set directory=$HOME/.vim/swpfile
 set undodir=$HOME/.vim/undo
 
 " 検索時に大文字が含まれている場合は区別する
+set ignorecase
 set smartcase
 " 最後まで検索したら先頭に戻さない
 set nowrapscan
+" インクリメンタルサーチ
+set incsearch
+
 " 必ずvimgrepを使用する
 "set grepprg=internal
 
@@ -41,6 +45,8 @@ set number
 "set list
 " 対応する括弧を表示
 set showmatch
+" 実行途中の入力を右下に表示
+set showcmd
 " テキストの最大幅の制約を無効化する
 set textwidth=0
 " テキストの折り返しを行わない
