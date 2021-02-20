@@ -1,41 +1,51 @@
 # .bashrc
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
   source /etc/bashrc
-elif [ -f /etc/gentoo-release ]; then
-  source /etc/bash/bashrc
 fi
-
-export VCS_REPOSITORIES="$HOME/repository"
-export VCS_GIT="$VCS_REPOSITORIES/git"
-
-# Source Git extension
-if [ -f "$VCS_GIT/dotfiles/bash/.git-completion.sh" ]; then
-  source "$VCS_GIT/dotfiles/bash/.git-completion.sh"
-fi
-if [ -f "$VCS_GIT/dotfiles/bash/.git-prompt.sh" ]; then
-  source "$VCS_GIT/dotfiles/bash/.git-prompt.sh"
-fi
-
-export PS1="\[\033]0;\u@\h:\w\007\]\[\033[01;32m\]\u@\h\[\033[01;34m\] \W\$(__git_ps1 \"[%s]\") \$\[\033[00m\] "
-
-# less colors setting.
-export LESS='-i -R'
-
-# grep colors setting.
-#export GREP_COLOR='1;37;41'
-
-# Path settings
-PATH=/usr/local/bin:/usr/local/sbin:$PATH
-PATH=~/bin:$PATH
-export PATH
 
 # User specific aliases and functions
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias diff='diff --color=auto'
 alias ls='ls -F --color=auto --show-control-chars'
-#alias grep='grep -E --color=auto'
+alias grep='grep --color=auto'
+alias ip='ip --color=auto'
 #alias eng='LANG=C LANGUAGE=C LC_CTYPE=C'
+
+# Source Git extension
+if [ -f ~/.git-completion.bash ]; then
+  source ~/.git-completion.bash
+fi
+if [ -f ~/.git-prompt.sh ]; then
+  source ~/.git-prompt.sh
+fi
+
+#export PS1="\[\033[037;044m\]\W\$(__git_ps1 \"[%s]\")$\[\033[037;000m\] "
+#export PS1="\[\033[037;044m\]\W$\[\033[037;000m\] "
+export PS1="\[\033[034m\]\u@\W\$(__git_ps1 \"[%s]\")\$\[\033[037;000m\] "
+
+# less colors setting.
+#export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
+export LESS='-i -R'
+#export LESS=-R
+
+# grep colors setting.
+#export GREP_COLOR='1;37;41'
+
+case $TERM in
+	linux) LANG=C;;
+	xterm) LANG=C;;
+	*) LANG=ja_JP.UTF-8;;
+esac
+export LANG
+
+# Path settings
+PATH=~/bin:$PATH
+export PATH
 
